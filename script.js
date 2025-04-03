@@ -10,3 +10,9 @@ hover.addEventListener('mouseleave', () => {
     hover.textContent = "Hover Me!"
 });
 
+//Keyboard Event Script
+var keypress = document.getElementById("keyboard")
+
+keypress.addEventListener('keypress', (e) => {
+    document.getElementById("lastkey").textContent = `Your Last Button Press was ${String.fromCharCode(e.charCode)}`;
+});
