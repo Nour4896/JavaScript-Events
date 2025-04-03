@@ -28,7 +28,7 @@ form.addEventListener('submit', (e) => {
 });
 
 //Focus/Blur Events
-var numberCheck = document.getElementById("number")
+var numberCheck = document.getElementById("number");
 
 numberCheck.addEventListener('focus', () => {
     numberCheck.style.background = "lightblue"
@@ -36,13 +36,22 @@ numberCheck.addEventListener('focus', () => {
 
 numberCheck.addEventListener('blur', () => {
     if (numberCheck.value > 10) {
-        numberCheck.style.background = "salmon"
-        document.getElementById("error").textContent = 'This Number is Not Valid'
+        numberCheck.style.background = "salmon";
+        document.getElementById("error").textContent = 'This Number is Not Valid';
     } else if (numberCheck.value === "") {
-        numberCheck.style.background = "salmon"
-        document.getElementById("error").textContent = 'Please Enter a Number'
+        numberCheck.style.background = "salmon";
+        document.getElementById("error").textContent = 'Please Enter a Number';
     } else {
-        numberCheck.style.background = "lightgreen"
-        document.getElementById("error").textContent = 'This Number Works, Good Choice'
+        numberCheck.style.background = "lightgreen";
+        document.getElementById("error").textContent = 'This Number Works, Good Choice';
+    }
+});
+
+//Event Delegation
+var teams = document.getElementById("delegation");
+
+teams.addEventListener('click', (e) => {
+    if (e.target.tagName === 'BUTTON') {
+        alert('Nour loves ' + e.target.textContent);
     }
 });
